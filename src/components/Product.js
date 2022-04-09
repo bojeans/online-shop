@@ -1,7 +1,9 @@
-const Product = (name, images, description, price, id) => {
+import React from "react";
+
+const Product = ({ name, image, description, price, id }) => {
   return (
     <li>
-      <img src={images} alt={name} />
+      <img src={image} alt={name} />
       <h2>{name}</h2>
       <p>{description}</p>
       <p>{price}</p>
