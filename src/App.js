@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from "react";
 import "./App.css";
-import { fetchProducts } from "./services/fetchProducts"
+import { fetchProducts } from "./services/fetchProducts";
+import Products from "./components/Products";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -8,8 +9,6 @@ function App() {
   const loadData = async () => {
     const products = await fetchProducts();
     setProducts(products);
-
-   
   };
 
   useEffect(() => {
@@ -17,11 +16,11 @@ function App() {
   }, []);
 
   return (
-  <div>
-    hello world
-    {products}
+    <div>
+      hello world
+      <Products products={products} />
     </div>
-    );
+  );
 }
 
 export default App;
