@@ -6,12 +6,14 @@ const Product = ({ name, image, description, price, priceId }) => {
     checkout(priceId);
   };
   return (
-    <li>
-      <img src={image} alt={name} />
-      <h2>{name}</h2>
-      <p>{description}</p>
-      <p>{price}</p>
-      <button onClick={clickEvent}> Buy Now</button>
+    <li className="product-container">
+      <img src={image} alt={name} className="product-image" />
+      <h2 className="product-title">{name}</h2>
+      <p className="product-content">{description}</p>
+      <p className="product-price">{price}</p>
+      <button onClick={clickEvent} className="product-buynow-button">
+        Buy Now
+      </button>
     </li>
   );
 };

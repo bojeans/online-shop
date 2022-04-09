@@ -17,7 +17,8 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="main">
+      <h1>Shop</h1>
       <Products products={products} />
     </div>
   );
