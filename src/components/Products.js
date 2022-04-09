@@ -11,6 +11,7 @@ const Products = ({ products }) => {
           name={product.name}
           description={product.description}
           price={product.prices[0].unit_amount}
+          priceId={product.prices[0].id}
         />
       ))}
     </ul>
