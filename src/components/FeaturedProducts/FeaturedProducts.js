@@ -16,7 +16,7 @@ const FeaturedProducts = ({ products, setIsFeaturedDisplayed }) => {
         </button>
       </div>
 
-      <div className="featuredProductsContainer">
+      <ul className="featuredProductsContainer">
         {products.map((product) => (
           <Product
             key={product.id}
@@ -27,7 +27,7 @@ const FeaturedProducts = ({ products, setIsFeaturedDisplayed }) => {
             priceId={product.prices[0].id}
           />
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

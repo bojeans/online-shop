@@ -79,6 +79,10 @@ function App() {
   return (
     <div className="main">
       <h1>Ice Cream Shop</h1>
+      <p className="disclaimer">
+        *this page is not live, for web development training purposes only.
+        Chris Anderson - author
+      </p>
       <div className="extra-functionality">
         <CategoryFilter
           setCategory={setCategory}
