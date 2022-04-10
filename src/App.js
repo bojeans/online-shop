@@ -11,8 +11,11 @@ import Search from "./components/Search/Search";
 import { getProductsBySearch } from "./components/Search/getProductsBySearch";
 import FeaturedProducts from "./components/FeaturedProducts/FeaturedProducts";
 import { getFeaturedProducts } from "./components/FeaturedProducts/getFeaturedProducts";
+import Pagination from "./components/Pagination/Pagination";
+import { getPaginatedProducts } from "./components/Pagination/getPaginatedProducts";
+import { getPaginationLinks } from "./components/Pagination/getPaginationLinks";
 
-// Business logic from util folder
+// Business logic from utility folder
 import { fetchProducts } from "./services/fetchProducts";
 import { getCategories } from "./utils/getCategories";
 import { filterByCategory } from "./utils/filterByCategory";
@@ -29,10 +32,17 @@ function App() {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [isFeaturedDisplayed, setIsFeaturedDisplayed] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [paginationLimit] = useState(6);
+  const [pageList, setPaginationNumbers] = useState([]);
+  const [displayedProducts, setDisplayedProducts] = useState([]);
 
   const loadData = async () => {
     const products = await fetchProducts();
     setProducts(products);
+
+    const categories = getCategories(products);
+    console.log(categories);
+    setCategories(categories);
   };
 
   useEffect(() => {
@@ -43,8 +53,8 @@ function App() {
   useEffect(() => {
     const filtered = filterByCategory(products, category);
     const sorted = sortProducts(filtered, sortBy);
-    // const searched = getProductsBySearch(sorted, searchPrefix);
-    // setFilteredProducts(searched);
+    const searched = getProductsBySearch(sorted, searchPrefix);
+    setFilteredProducts(searched);
     setCurrentPage(1);
   }, [category, sortBy, products, searchPrefix]);
 
@@ -53,6 +63,18 @@ function App() {
     const featured = getFeaturedProducts(products);
     setFeaturedProducts(featured);
   }, [products, category, sortBy, setIsFeaturedDisplayed]);
+
+  // Paginate products
+  useEffect(() => {
+    const pageList = getPaginationLinks(filteredProducts, paginationLimit);
+    setPaginationNumbers(pageList);
+    const page = getPaginatedProducts(
+      filteredProducts,
+      paginationLimit,
+      currentPage
+    );
+    setDisplayedProducts(page);
+  }, [filteredProducts, currentPage, paginationLimit]);
 
   return (
     <div className="main">
@@ -69,6 +91,7 @@ function App() {
         />
       )}
       <Products products={products} />
+      <Pagination pageList={pageList} setCurrentPage={setCurrentPage} />
     </div>
   );
 }
