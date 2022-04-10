@@ -6,7 +6,7 @@ const Product = ({ name, image, description, price, priceId }) => {
     checkout(priceId);
   };
   return (
-    <li className="product-container">
+    <li className="product-grid-item">
       <img src={image} alt={name} className="product-image" />
       <h2 className="product-title">{name}</h2>
       <p className="product-content">{description}</p>

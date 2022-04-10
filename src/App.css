@@ -1,15 +1,7 @@
-body {
-  margin: 0 auto;
-}
-
-.main {
-}
-
-/* individual product main class */
-.product-container {
-  display: grid;
-  text-align: center;
-  width: 50%;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .product-image {
@@ -17,8 +9,32 @@ body {
   height: auto;
 }
 
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+h1 {
+  color: blue;
+  margin: 1rem;
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-gap: 2rem;
+  list-style-type: none;
+}
+
+.product-grid-item {
+  display: grid;
+  grid-template-rows: min-content;
+  border-radius: 0.5rem;
+}
+
 .product-title {
   font-size: 2rem;
+  margin: 1rem;
 }
 
 .product-content {
