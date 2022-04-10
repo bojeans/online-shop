@@ -1,7 +1,7 @@
-const getProductsBySearch = (products, search) => {
+const getProductsBySearch = (products, searchPrefix) => {
   return products.filter((search) => {
-    if (search !== "") {
-      return search.name.toLowerCase().includes(search.toLowerCase());
+    if (searchPrefix !== "") {
+      return search.name.toLowerCase().includes(searchPrefix.toLowerCase());
     } else return true;
   });
 };
