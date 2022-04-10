@@ -90,7 +90,7 @@ function App() {
           setIsFeaturedDisplayed={setIsFeaturedDisplayed}
         />
       )}
-      <Products products={products} />
+      <Products products={displayedProducts} />
       <Pagination pageList={pageList} setCurrentPage={setCurrentPage} />
     </div>
   );
