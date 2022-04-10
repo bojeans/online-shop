@@ -4,7 +4,11 @@ const Pagination = ({ pageList, setCurrentPage }) => {
   return (
     <>
       {pageList.map((number) => (
-        <button key={number} onClick={() => setCurrentPage(number)}>
+        <button
+          className="page-buttons"
+          key={number}
+          onClick={() => setCurrentPage(number)}
+        >
           {number}
         </button>
       ))}
