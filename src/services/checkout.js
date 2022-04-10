@@ -1,7 +1,6 @@
 import { loadStripe } from "@stripe/stripe-js";
 
 const createCheckoutSession = async (priceId) => {
-  console.log(process.env);
   const response = await fetch(
     `${process.env.REACT_APP_API_URL}/checkout-session`,
     {

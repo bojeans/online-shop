@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="main">
-      <h1>Shop</h1>
+      <h1>Ice Cream Shop</h1>
       <Products products={products} />
     </div>
   );
