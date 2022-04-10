@@ -8,7 +8,11 @@ const FilterBy = ({ setCategory, categories }) => {
   return (
     <div className="filterBy">
       <label htmlFor="category">Filter by</label>
-      <select id="category" onChange={onChange}>
+      <select
+        id="category"
+        className="filter-dropdown-menu"
+        onChange={onChange}
+      >
         <option value="all">All</option>
         {categories.map((category) => (
           <option key={category} value={category}>

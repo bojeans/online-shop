@@ -79,10 +79,14 @@ function App() {
   return (
     <div className="main">
       <h1>Ice Cream Shop</h1>
-      <div>
-        <CategoryFilter setCategory={setCategory} categories={categories} />
+      <div className="extra-functionality">
+        <CategoryFilter
+          setCategory={setCategory}
+          categories={categories}
+          className="filter"
+        />
         <SortBy setSortBy={setSortBy} />
-        <Search setSearch={setSearch} />
+        <Search setSearch={setSearch} className="search" />
       </div>
       {isFeaturedDisplayed && (
         <FeaturedProducts

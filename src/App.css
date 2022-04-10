@@ -76,14 +76,65 @@ h1 {
   border-radius: 1.5rem;
 }
 
+/* Search/Filter/Sort/Featured */
+.extra-functionality,
+.featuredProducts {
+  display: grid;
+  text-align: center;
+}
+
+.sortBy,
+.filterBy {
+  margin-bottom: 0.2rem;
+}
+
+.search {
+  margin: 1rem;
+}
+
 @media only screen and (min-width: 48rem) {
   .product-grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .extra-functionality {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 1.5rem;
+  }
+  .search {
+    height: 3.5vh;
+    width: 15vw;
+    margin: 0 2rem;
+    font-size: 1.3rem;
+  }
+  .sortBy,
+  .filterBy {
+    font-size: 1.5rem;
+  }
+  .filter-dropdown-menu,
+  .sort-dropdown-menu {
+    height: 3vh;
+    margin-left: 0.5rem;
   }
 }
 
 @media only screen and (min-width: 64rem) {
   .product-grid {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .search {
+    height: 6vh;
+    width: 20vw;
+    font-size: 1.6rem;
+    margin: 0 auto;
+  }
+  .sortBy,
+  .filterBy {
+    font-size: 2rem;
+  }
+  .filter-dropdown-menu,
+  .sort-dropdown-menu {
+    height: 5vh;
+    width: 10vw;
+    margin-left: 1rem;
   }
 }
