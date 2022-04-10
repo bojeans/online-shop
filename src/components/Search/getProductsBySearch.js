@@ -1,4 +1,4 @@
-const getProductsSearch = (products, search) => {
+const getProductsBySearch = (products, search) => {
   return products.filter((search) => {
     if (search !== "") {
       return search.name.toLowerCase().includes(search.toLowerCase());
@@ -6,4 +6,4 @@ const getProductsSearch = (products, search) => {
   });
 };
 
-export { getProductsSearch };
+export { getProductsBySearch };

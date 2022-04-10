@@ -1,6 +1,6 @@
-import "./FeaturedProducts.css";
-import Product from "../Product/Product.jsx";
+import Product from "../Product";
 import formatAmount from "../../utils/formatAmount";
+import React from "react";
 
 const FeaturedProducts = ({ products, setIsFeaturedDisplayed }) => {
   return (
