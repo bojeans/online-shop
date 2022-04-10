@@ -5,7 +5,7 @@ import "./App.css";
 // Components
 
 import Products from "./components/Products";
-import FilterBy from "./components/FilterBy";
+import CategoryFilter from "./components/FilterBy";
 import SortBy from "./components/SortBy";
 import Search from "./components/Search/Search";
 import { getProductsBySearch } from "./components/Search/getProductsBySearch";
@@ -16,7 +16,7 @@ import { getPaginatedProducts } from "./components/Pagination/getPaginatedProduc
 import { getPaginationLinks } from "./components/Pagination/getPaginationLinks";
 
 // Business logic from utility folder
-import { fetchProducts } from "./services/fetchProducts";
+import { getProducts } from "./services/getProducts";
 import { getCategories } from "./utils/getCategories";
 import { filterByCategory } from "./utils/filterByCategory";
 import { sortProducts } from "./utils/sortProducts";
@@ -37,7 +37,7 @@ function App() {
   const [displayedProducts, setDisplayedProducts] = useState([]);
 
   const loadData = async () => {
-    const products = await fetchProducts();
+    const products = await getProducts();
     setProducts(products);
 
     const categories = getCategories(products);
@@ -80,7 +80,7 @@ function App() {
     <div className="main">
       <h1>Ice Cream Shop</h1>
       <div>
-        <FilterBy setCategory={setCategory} categories={categories} />
+        <CategoryFilter setCategory={setCategory} categories={categories} />
         <SortBy setSortBy={setSortBy} />
         <Search setSearch={setSearch} />
       </div>
