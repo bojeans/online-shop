@@ -7,6 +7,12 @@ import FilterBy from "./components/FilterBy";
 import SortBy from "./components/SortBy";
 import Search from "./components/Search/Search";
 
+// Business logic from util folder
+import { getProducts } from "./services/getProducts";
+import { getCategories } from "./utils/getCategories";
+import { filterByCategory } from "./utils/filterByCategory";
+import { sortProducts } from "./utils/sortProducts";
+
 function App() {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState("all");
@@ -36,6 +42,11 @@ function App() {
   return (
     <div className="main">
       <h1>Ice Cream Shop</h1>
+      <div>
+        <CategoryFilter setCategory={setCategory} categories={categories} />
+        <SortBy setSortBy={setSortBy} />
+        <Search setSearch={setSearch} />
+      </div>
       <Products products={products} />
     </div>
   );
