@@ -1,3 +1,5 @@
+import React from "react";
+
 const FilterBy = ({ setCategory, categories }) => {
   const onChange = (event) => {
     setCategory(event.target.value);

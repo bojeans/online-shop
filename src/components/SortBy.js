@@ -1,3 +1,5 @@
+import React from "react";
+
 const SortBy = ({ setSortBy }) => {
   const onChange = (event) => {
     setSortBy(event.target.value);

@@ -1,3 +1,5 @@
+import React from "react";
+
 const Search = ({ setSearch }) => {
   const onChange = (e) => {
     if (e.target.value.length >= 3 || e.target.value === "") {
