@@ -8,6 +8,7 @@ import Products from "./components/Products";
 import CategoryFilter from "./components/FilterBy";
 import SortBy from "./components/SortBy";
 import Search from "./components/Search/Search";
+import SearchItems from "./components/Search/SearchItems";
 import { getProductsBySearch } from "./components/Search/getProductsBySearch";
 import FeaturedProducts from "./components/FeaturedProducts/FeaturedProducts";
 import { getFeaturedProducts } from "./components/FeaturedProducts/getFeaturedProducts";
@@ -91,6 +92,7 @@ function App() {
         />
         <SortBy setSortBy={setSortBy} />
         <Search setSearch={setSearch} className="search" />
+        <SearchItems searchItems={filteredProducts} />
       </div>
       {isFeaturedDisplayed && (
         <FeaturedProducts
