@@ -3,7 +3,11 @@ import { checkout } from "../services/checkout";
 
 const Product = ({ name, image, description, price, priceId }) => {
   const clickEvent = () => {
-    checkout(priceId);
+    try {
+      checkout(priceId);
+    } catch {
+      console.error();
+    }
   };
   return (
     <li className="product-grid-item">
