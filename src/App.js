@@ -42,7 +42,6 @@ function App() {
     setProducts(products);
 
     const categories = getCategories(products);
-    console.log(categories);
     setCategories(categories);
   };
 

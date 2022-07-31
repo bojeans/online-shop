@@ -7,11 +7,9 @@ const getProductsWithPrices = (products, prices) =>
 const getProducts = async () => {
   const res1 = await fetch(`${process.env.REACT_APP_API_URL}/products`);
   const products = await res1.json();
-  console.log(products);
 
   const res2 = await fetch(`${process.env.REACT_APP_API_URL}/prices`);
   const prices = await res2.json();
-  console.log(prices);
 
   return getProductsWithPrices(products, prices);
 };
