@@ -92,7 +92,8 @@ function App() {
         />
         <SortBy setSortBy={setSortBy} />
         <Search setSearch={setSearch} className="search" />
-        <SearchItems searchItems={filteredProducts} />
+        {/* <SearchItems onChange={SearchItems} />  - couldn't quite get this
+        working */}
       </div>
       {isFeaturedDisplayed && (
         <FeaturedProducts
