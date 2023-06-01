@@ -37,6 +37,10 @@
     ]
   },
   "devDependencies": {
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22",
+    "stripe": "^12.7.0"
   }
 }
